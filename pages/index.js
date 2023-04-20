@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-import { Col, Divider, Row } from "antd";
+import { Col, Divider, List, Row, Space, Spin } from "antd";
 import Databox from "../Components/Databox";
 // import { gql, useQuery } from "@apollo/client";
 import { useQuery, gql } from "@apollo/client";
@@ -18,6 +18,13 @@ const GET_LOCATIONS = gql`
     }
   }
 `;
+
+const grid = {
+  gutter: 16,
+  column: 3,
+};
+
+
 export default function Home() {
   const { isSuccess, loading, error, data } = useQuery(GET_LOCATIONS);
   console.log(data, loading);
@@ -73,9 +80,15 @@ export default function Home() {
           paddingRight: "5rem",
           paddingTop: "2rem",
           paddingBottom: "2rem",
+          height:'100%'
         }}
       >
-        {loading == false &&
+        {loading==true &&
+          <Space style={{margin:'auto',height:'60vh'}} size="middle">
+          
+          <Spin size="large" />
+        </Space>}
+        {loading == false  &&
           data?.check_in.map((s) => {
             return (
               <Col span={8}>
@@ -84,8 +97,10 @@ export default function Home() {
               </Col>
             );
           })}
-        
+
+   
       </Row>
+
     </>
   );
 }
