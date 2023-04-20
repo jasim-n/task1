@@ -24,7 +24,6 @@ const grid = {
   column: 3,
 };
 
-
 export default function Home() {
   const { isSuccess, loading, error, data } = useQuery(GET_LOCATIONS);
   console.log(data, loading);
@@ -36,7 +35,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <Row
         gutter={[0, 10]}
         style={{
@@ -80,28 +79,24 @@ export default function Home() {
           paddingRight: "5rem",
           paddingTop: "2rem",
           paddingBottom: "2rem",
-          height:'100%',
-          display:loading? 'flex':'inherit'
+          height: "100%",
+          display: loading ? "flex" : "inherit",
         }}
       >
-        {loading==true &&
-          <Space style={{margin:'auto',height:'60vh'}} size="middle">
-          
-          <Spin size="large" />
-        </Space>}
-        {loading == false  &&
+        {loading == true && (
+          <Space style={{ margin: "auto", height: "60vh" }} size="middle">
+            <Spin size="large" />
+          </Space>
+        )}
+        {loading == false &&
           data?.check_in.map((s) => {
             return (
               <div className="item">
                 <Databox data={s} />
-                
               </div>
             );
           })}
-
-   
       </div>
-
     </>
   );
 }

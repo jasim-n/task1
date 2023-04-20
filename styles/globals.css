@@ -23,7 +23,7 @@
   right: 10px;
   top: 10px;
 }
-.paragraphst{
+.paragraphst {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
@@ -42,10 +42,10 @@ body {
   overflow-x: hidden;
   height: 100%;
 }
-.dataimg .ant-img{
+.dataimg .ant-img {
   max-width: 100%;
 }
-.ant-img{
+.ant-img {
   max-width: 100%;
 }
 .masonry {

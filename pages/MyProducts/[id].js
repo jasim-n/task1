@@ -63,27 +63,26 @@ const Allcheckin = () => {
     }
      }
   `;
-const headingcheck=()=>{ if (headingValue.length >= 3) {
-  setEdit1(false);
-  setheadingerror(false);
-  nameupdate({ variables: { id: id, name: headingValue } });
-} else {
-  setheadingerror(true);
-}
-
-
-}
-const commentcheck=()=>{ if (commentValue.length >= 3) {
-  setEdit2(false);
-  setcommenterror(false);
-  messageupdater({
-    variables: { id: id, comment: commentValue },
-  });} else {
-  setcommenterror(true);
-}
-
-
-}
+  const headingcheck = () => {
+    if (headingValue.length >= 3) {
+      setEdit1(false);
+      setheadingerror(false);
+      nameupdate({ variables: { id: id, name: headingValue } });
+    } else {
+      setheadingerror(true);
+    }
+  };
+  const commentcheck = () => {
+    if (commentValue.length >= 3) {
+      setEdit2(false);
+      setcommenterror(false);
+      messageupdater({
+        variables: { id: id, comment: commentValue },
+      });
+    } else {
+      setcommenterror(true);
+    }
+  };
   const { isSuccess, loading, error, data } = useQuery(GET_LOCATIONS);
 
   useEffect(() => {
@@ -174,7 +173,8 @@ const commentcheck=()=>{ if (commentValue.length >= 3) {
                 <Button
                   type="primary"
                   onClick={() => {
-                  headingcheck()}}
+                    headingcheck();
+                  }}
                   style={{ marginTop: "10px" }}
                 >
                   save
@@ -224,8 +224,7 @@ const commentcheck=()=>{ if (commentValue.length >= 3) {
                 <Button
                   type="primary"
                   onClick={() => {
-commentcheck()
-                  
+                    commentcheck();
                   }}
                   style={{ marginTop: "10px" }}
                 >
