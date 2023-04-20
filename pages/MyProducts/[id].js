@@ -136,7 +136,7 @@ const Allcheckin = () => {
           {!edit3 && (
             <div
               className="prpic"
-              style={{ display: "flex", alignItems: "flex-end" }}
+              style={{ display: "flex", alignItems: "center",textAlign:'end' }}
             >
               <p className="pictxt"> {Imgurl}</p>
               <button
