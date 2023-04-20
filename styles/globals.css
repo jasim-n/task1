@@ -42,7 +42,21 @@ body {
   overflow-x: hidden;
   height: 100%;
 }
+.dataimg .ant-img{
+  max-width: 100%;
+}
+.ant-img{
+  max-width: 100%;
+}
+.masonry {
+  column-count: 3;
+  column-gap: 1em;
+}
 
+.item {
+  break-inside: avoid-column;
+  margin-bottom: 1em;
+}
 
 body {
   color: rgb(var(--foreground-rgb));

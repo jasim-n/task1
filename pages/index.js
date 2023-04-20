@@ -72,15 +72,16 @@ export default function Home() {
           </p>
         </Col>
       </Row>
-      <Row
-        gutter={[16, 16]}
+      <div
+        className="masonry"
         style={{
           backgroundColor: "#F0F0F0",
           paddingLeft: "5rem",
           paddingRight: "5rem",
           paddingTop: "2rem",
           paddingBottom: "2rem",
-          height:'100%'
+          height:'100%',
+          display:loading? 'flex':'inherit'
         }}
       >
         {loading==true &&
@@ -91,15 +92,15 @@ export default function Home() {
         {loading == false  &&
           data?.check_in.map((s) => {
             return (
-              <Col span={8}>
+              <div className="item">
                 <Databox data={s} />
                 
-              </Col>
+              </div>
             );
           })}
 
    
-      </Row>
+      </div>
 
     </>
   );

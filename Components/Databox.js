@@ -13,9 +13,9 @@ console.log(dateMoment,'gvtbuhj');
     return (
         <div>
             <Row onClick={()=> router.push(`/MyProducts/${a}`)} style={{backgroundColor:'#FFFFFF',padding:'1rem 1rem 1rem 1rem',borderRadius:'4px',border: '1px solid #F0F0F0'}}>
-                <Col span={24}>
+                <Col  className='dataimg' span={24}>
               {  Loadedimg &&    
-                <Image onLoad={()=>setLoadedimg(true)} onError={()=>setLoadedimg(false)} src={data.image_url} preview={false} style={{width:'100%',borderRadius:'10px'}} width={360} height={220}/>
+                <Image onLoad={()=>setLoadedimg(true)} onError={()=>setLoadedimg(false)} src={data.image_url} preview={false}  style={{width:'360px',borderRadius:'10px',maxWidth:'100%'}}  height={220}/>
                 }
                 </Col>
                 <Col span={24}><p className='paragraphst' style={{ fontFamily: "Roboto",fontSize:'14px',fontWeight:'400',lineHeight:'22px',paddingTop:'.7rem' }}>{data?.comment}</p></Col>
